@@ -162,3 +162,11 @@ interface ErrorContainer {
   // that the predefined properties must be assignable to the index signature type.
   // This is to ensure type safety and consistency.
 }
+
+const errorBag: ErrorContainer = {
+  id: '123',
+  email: 'Not a valid email!',
+  username: 'Must start with a capital character!',
+}
+
+
