@@ -206,3 +206,25 @@ const userInput_nullish = ''
 
 const storedData2 = userInput_nullish || 'DEFAULT' // || if null or undefined or empty string or 0
 const storedData = userInput_nullish ?? 'DEFAULT' // ?? only if null or undefined
+
+
+// function size1(input: string | number){
+//     if (input instanceof 'string'){
+//         return input.length
+//     }
+//     return input
+// }
+
+// function size2(input: string | number){
+//     if (<string>input){
+//         return input.length
+//     }
+//     return input
+// }
+
+function size3(input: string | number){
+    if (typeof input === 'string'){
+        return input.length
+    }
+    return input
+}
