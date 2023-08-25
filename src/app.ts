@@ -123,3 +123,23 @@ function moveAnimal(animal: Animal) {
 
   console.log('Moving at speed: ' + speed)
 }
+
+moveAnimal({ type: 'bird', flyingSpeed: 10 })
+
+// Type Casting
+
+const paragraph = document.querySelector('p')
+
+const paragraph2 = document.getElementById('message-output')
+
+
+
+const userInput = document.getElementById('user-input')
+
+// userInput.value = 'Hi there!' // error
+
+const userInput2 = <HTMLInputElement>document.getElementById('user-input')!
+
+userInput2.value = 'Hi there!'
+
+const userInput3 = document.getElementById('user-input')! as HTMLInputElement
