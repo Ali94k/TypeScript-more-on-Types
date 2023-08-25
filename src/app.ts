@@ -132,8 +132,6 @@ const paragraph = document.querySelector('p')
 
 const paragraph2 = document.getElementById('message-output')
 
-
-
 const userInput = document.getElementById('user-input')
 
 // userInput.value = 'Hi there!' // error
@@ -143,3 +141,24 @@ const userInput2 = <HTMLInputElement>document.getElementById('user-input')!
 userInput2.value = 'Hi there!'
 
 const userInput3 = document.getElementById('user-input')! as HTMLInputElement
+
+// Index Properties
+
+interface ErrorContainer {
+  // { email: 'Not a valid email', username: 'Must start with a character!' }
+
+  id: string
+  [prop: string]: string
+
+  // id: number // error !!!
+
+  // In TypeScript, when you define an object type with an index signature
+  // (using [prop: string]: string), it means that the object can have any number of properties
+  // of type string with keys of type string. This index signature allows you to add any string-keyed
+  // property to the object with its corresponding string value.
+
+  // However, if you also want to have specific properties with predefined keys and types in
+  // the same object, like the id property of type number in your case, TypeScript enforces
+  // that the predefined properties must be assignable to the index signature type.
+  // This is to ensure type safety and consistency.
+}
