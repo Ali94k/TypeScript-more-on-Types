@@ -189,3 +189,13 @@ function add_overload(a: Combinable, b: Combinable) {
 
 const result_overlad = add_overload('3 7 ', '5')
 result_overlad.split(' ') // no error
+
+// Optional Chaining ?.?.
+
+const fetchedUserData = {
+  id: 'u1',
+  name: 'Max',
+  job: { title: 'CEO', description: 'My own company' },
+}
+
+console.log(fetchedUserData?.job?.title)
