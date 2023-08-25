@@ -199,3 +199,10 @@ const fetchedUserData = {
 }
 
 console.log(fetchedUserData?.job?.title)
+
+// Nullish Coalescing ??
+
+const userInput_nullish = ''
+
+const storedData2 = userInput_nullish || 'DEFAULT' // || if null or undefined or empty string or 0
+const storedData = userInput_nullish ?? 'DEFAULT' // ?? only if null or undefined
