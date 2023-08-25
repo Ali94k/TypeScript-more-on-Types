@@ -169,4 +169,23 @@ const errorBag: ErrorContainer = {
   username: 'Must start with a capital character!',
 }
 
+// Function Overloads
 
+const result = add('37', '5')
+// result.split(' ') // error
+
+const result_number = add(1, 5) as number
+const result_string = add('Max', ' Schwarz') as string
+
+function add_overload(a: number, b: number): number
+function add_overload(a: string, b: string): string
+function add_overload(a: Combinable, b: Combinable) {
+  if (typeof a === 'string' || typeof b === 'string') {
+    return a.toString() + b.toString()
+  }
+
+  return a + b
+}
+
+const result_overlad = add_overload('3 7 ', '5')
+result_overlad.split(' ') // no error
